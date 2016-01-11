@@ -5,11 +5,18 @@ function normalize() {
 }
 
 function makeImageFullScreen() {
+	// alert("you're hovering");
+
 	myImg = document.getElementById("home1");
 
 	if(window.innerWidth / window.innerHeight > 1.5) {
 		myImg.style.width = window.innerWidth+ "px";
 		myImg.style.height = window.innerWidth/1.5 + "px";
+	}
+
+	else if(window.innerWidth / window.innerHeight <= 1.5){
+		myImg.style.width = window.innerWidth+ "px";
+		myImg.style.height = window.innerHeight+ "px";
 	}
 
 	else{
