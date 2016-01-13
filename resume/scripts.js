@@ -1,7 +1,7 @@
 function normalize() {
 	makeImageFullScreen();
 	fixTopMargin();
-	centerResumeButton();
+	resumeButton();
 }
 
 function makeImageFullScreen() {
@@ -11,6 +11,7 @@ function makeImageFullScreen() {
 
 	if(window.innerHeight > window.innerWidth){
 		myImg.style.height = window.innerHeight+ "px";
+		myImg.style.width = (window.innerHeight*1.5) + "px";
 	}
 
 	else if(window.innerWidth / window.innerHeight > 1.5) {
@@ -18,9 +19,9 @@ function makeImageFullScreen() {
 		myImg.style.height = window.innerWidth/1.5 + "px";
 	}
 
-	else if(window.innerWidth / window.innerHeight <= 1.5){
-		myImg.style.width = window.innerWidth+ "px";
+	else if(window.innerWidth / window.innerHeight < 1.5){
 		myImg.style.height = window.innerHeight+ "px";
+		myImg.style.width = (window.innerHeight*1.5) + "px";
 	}
 
 	else{
