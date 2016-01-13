@@ -173,6 +173,7 @@ footer p {
 .icons img {
 	padding: 2px;
 	transition: margin-top .1s;
+	-webkit-transition: margin-top .1s;
 }
 
 .icons img:hover {
