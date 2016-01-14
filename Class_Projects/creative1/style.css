@@ -1,6 +1,6 @@
 body {
 	width: 100%;
-	background: firebrick;
+	background: dimgrey;
 }
 
 #logo {
@@ -10,5 +10,7 @@ body {
 .letterBox {
 	margin-left: 15%;
 	margin-right: 15%;
-	background: yellow;
+	padding: 10px;
+	background: firebrick;
+	box-shadow: 0 0 2em black;
 }

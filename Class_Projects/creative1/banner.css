@@ -1,9 +1,10 @@
 .spotlight {
-    height: 400px;
+    height: 300px;
     width: 100%;
     background: black;
     text-align: center;
     position: relative;
+    box-shadow: 0 0 .5em black;
 }
 
 .swipe {
