@@ -2,8 +2,11 @@
 <html>
 <head>
 	<title>MovieTime - A Movie for Every Occasion</title>
+	<link rel="stylesheet" type="text/css" href="banner.css">
+	<script src="Swipe.js"></script>
 </head>
 <body>
+
 
 <script>
 function showBlurb(){
@@ -17,5 +20,63 @@ function showBlurb(){
 </div>
 <h1>MovieTime</h1>
 <h2>A Movie for Every Occasion</h2>
+
+
+<div class="spotlight">
+    <div id="slider" class="swipe">
+        <div class="swipe-wrap">
+            <!--
+                <div class="slide" style="background: url('@homePageContent.background') center; background-size: cover">
+                    <div class="slideTextHolder">
+                        <h1>@homePageContent.title</h1>
+                        <p>@homePageContent.text</p>
+                        @if(!homePageContent.link.isEmpty) {
+                            <a href="@homePageContent.link" class="btn btn-blue">@homePageContent.linkText</a>
+                        }
+                    </div>
+                </div>
+            -->
+            <div class="slide" style="background: url('@homePageContent.background') center; background-size: cover">
+                <div class="slideTextHolder">
+                    <h1>Example</h1>
+                    <p>Example Text.</p>
+                    <!--
+                        To add a link to the image
+                    @if(!homePageContent.link.isEmpty) {
+                        <a href="@homePageContent.link" class="btn btn-blue">@homePageContent.linkText</a>
+                    }-->
+                </div>
+            </div>
+            <div class="slide" style="background: url('@homePageContent.background') center; background-size: cover">
+                <div class="slideTextHolder">
+                    <h1>Second Slide</h1>
+                    <p>Second slide text example</p>
+                    <!--
+                        To add a link to the image
+                    @if(!homePageContent.link.isEmpty) {
+                        <a href="@homePageContent.link" class="btn btn-blue">@homePageContent.linkText</a>
+                    }-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spotlightNavigation">
+        <div class="left" id="leftArrow"></div>
+        <div class="right" id="rightArrow"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var swipe = new Swipe(document.getElementById("slider"), {
+        auto: 10000
+    });
+
+    document.getElementById("leftArrow").addEventListener('click',function(){
+        swipe.prev();
+    }, false);
+    document.getElementById("rightArrow").addEventListener('click',function(){
+        swipe.next();
+    }, false);
+</script>
 </body>
 </html>

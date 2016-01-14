@@ -1,0 +1,112 @@
+.spotlight {
+    height: 300px;
+    width: 100%;
+    background: black;
+    text-align: center;
+    position: relative;
+}
+
+.swipe {
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.swipe-wrap > div {
+    float:left;
+    width:100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 300px;
+}
+
+.slideTextHolder {
+    background: rgba(0,0,0,0.6);
+    width: 500px;
+    display: inline-block;
+    margin-top: 50px;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.spotlightNavigation {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.spotlightNavigation > div {
+    position: absolute;
+    top: 100px;
+    width: 0;
+    height: 0;
+    opacity: 0.4;
+
+    cursor: pointer;
+    transition: 0.25s ease opacity;
+    -webkit-transition: 0.25s ease opacity;
+    -moz-transition: 0.25s ease opacity;
+    -o-transition: 0.25s ease opacity;
+    -ms-transition: 0.25s ease opacity;
+}
+
+.spotlightNavigation > div:hover {
+    opacity: 1;
+}
+
+.spotlightNavigation .left {
+    left: 20px;
+    border-right: 30px solid white;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+}
+
+.spotlightNavigation .right {
+    right: 20px;
+    border-left: 30px solid white;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+}
+
+.homeContent {
+    background: #f5f5f5;
+    border: #aaa solid 1px;
+    height: 225px;
+    box-shadow: 3px 4px 20px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.homeContent.accent {
+    background: #ddd;
+    border: #c7c7c7 solid 1px;
+}
+
+.homeContentContainer {
+    margin: 15px;
+}
+
+.homeContentContainer div:not(.contentHolder) .contentEntry {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.homeThumbnail {
+    width: 50px;
+    height: 50px;
+}
+
+.homeNav {
+    padding: 10px;
+    background: #444;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.8);
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #ccc;
+}
