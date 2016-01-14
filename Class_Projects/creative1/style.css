@@ -1,0 +1,14 @@
+body {
+	width: 100%;
+	background: firebrick;
+}
+
+#logo {
+	height: 150px;
+}
+
+.letterBox {
+	margin-left: 15%;
+	margin-right: 15%;
+	background: yellow;
+}
