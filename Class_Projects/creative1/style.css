@@ -7,29 +7,43 @@ body {
 	height: 150px;
 }
 
+#container {
+	z-index: -10;
+	height: 1000px;
+	padding: 2%;
+}
+
 .letterBox {
 	margin-left: 15%;
 	margin-right: 15%;
-	padding: 10px;
+	padding: 2%;
 	background: firebrick;
 	box-shadow: 0 0 2em black;
 }
 
 .movieCover {
 	height: 300px;
+	width: 200px;
+	margin-bottom: -3px;
 }
 
 .movieWrapper {
+	float: left;
 	display: inline-block;
 	background: white;
 	padding: 5px;
-	box-shadow: 0 0 .25em black;
-	transition: box-shadow .25s;
+	box-shadow: 0 0px .5em black;
+	transition: box-shadow .2s;
+
+	margin: 10px;
+	padding: 5px;
+	height: 300px;
+	border: 1px solid black;
 }
 
 .movieWrapper:hover {
 	display: inline-block;
 	background: white;
 	padding: 5px;
-	box-shadow: 0 0 3em black;
+	box-shadow: 0 10px 2em black;
 }

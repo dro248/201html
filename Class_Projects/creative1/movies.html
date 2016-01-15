@@ -74,31 +74,87 @@
 </script>
 
 
-<div class="letterBox">
 
-	<div>
-		<h2>Great for a Date</h2>
-		<div class="movieWrapper">
-			<img src="img/movieCovers/Date_Night.jpg" class="movieCover">
-		</div>
-	</div>
 
-	<div>
-		<h2>Funny</h2>
-	</div>
 
-	<div>
-		<h2>Action</h2>
-	</div>
 
-	<div>
-		<h2>Sports</h2>
-	</div>
 
-	<div>
-		<h2>Scary</h2>
-	</div>
 
+
+
+<!--
+  <div id='container'></div>
+
+  <script id='template' type='text/ractive'>
+    <p>Hello, {{name}}!</p>
+  </script> 
+  
+
+  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+
+
+
+  <script>
+    var ractive = new Ractive({
+      // The `el` option can be a node, an ID, or a CSS selector.
+      el: '#container',
+
+      // We could pass in a string, but for the sake of convenience
+      // we're passing the ID of the <script> tag above.
+      template: '#template',
+
+      // Here, we're passing in some initial data
+      data: { name: 'David' }
+    });
+  </script>
+-->
+
+
+
+
+<div class="letterBox" id="container">
+
+
+    <script id='template' type='text/ractive'>
+        <h2>Great for a Date</h2>
+        {{#each dateMovies}}
+        <div>
+            <div class="movieWrapper">
+                <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}}>
+            </div>
+        </div>
+        {{/each}}
+
+
+    </script>
+
+    <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+
+    <script>
+        var ractive, dateMovies;
+
+        dateMovies = [
+          { name: 'Date Night', link:'Date_Night.jpg' },
+          { name: 'The Intern', link:'The_Intern.jpg' },
+          { name: '500 Days of Summer', link:'500_Days_of_Summer.jpg' },
+          { name: "Valentine's Day" , link:'Valentines_Day.jpg' }
+        ];
+
+
+        ractive = new Ractive({
+            // The `el` option can be a node, an ID, or a CSS selector.
+            el: '#container',
+
+            // We could pass in a string, but for the sake of convenience
+            // we're passing the ID of the <script> tag above.
+            template: '#template',
+
+            // Here, we're passing in some initial data
+            data: { 
+                dateMovies: dateMovies
+            }
+        });
+    </script>
 </div>
 
 <footer>
