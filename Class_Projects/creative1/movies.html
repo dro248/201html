@@ -6,7 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="banner.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	<script src="Swipe.js"></script>
+	<script src="scripts.js"></script>
 </head>
 <body>
 
@@ -120,7 +122,13 @@
         {{#each dateMovies}}
         <div>
             <div class="movieWrapper">
-                <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}}>
+                <img src="img/movieCovers/{{img}}" class="movieCover" alt={{name}}>
+
+                <!--
+                <div class="videoPlayer" style="display: none;">
+                	<iframe width="560" height="315" src="https://www.youtube.com/embed/aspBKFz2dBI" style="z-index: 100000;" frameborder="0" allowfullscreen></iframe>
+                </div> 
+                -->
             </div>
         </div>
         {{/each}}
@@ -131,13 +139,14 @@
     <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
 
     <script>
+    	Ractive.DEBUG = false;
         var ractive, dateMovies;
 
         dateMovies = [
-          { name: 'Date Night', link:'Date_Night.jpg' },
-          { name: 'The Intern', link:'The_Intern.jpg' },
-          { name: '500 Days of Summer', link:'500_Days_of_Summer.jpg' },
-          { name: "Valentine's Day" , link:'Valentines_Day.jpg' }
+          { name: 'Date Night', 		img:'Date_Night.jpg', link: ''},
+          { name: 'The Intern', 		img:'The_Intern.jpg' },
+          { name: '500 Days of Summer', img:'500_Days_of_Summer.jpg' },
+          { name: "Valentine's Day" , 	img:'Valentines_Day.jpg' }
         ];
 
 
