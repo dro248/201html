@@ -2,13 +2,12 @@
 <html>
 <head>
 	<title>MovieTime - A Movie for Every Occasion</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="banner.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	<script src="Swipe.js"></script>
-	<script src="scripts.js"></script>
 </head>
 <body>
 
@@ -31,10 +30,10 @@
                     </div>
                 </div>
             -->
-            <div class="slide" style="background: url('@homePageContent.background') center; background-size: cover">
-                <div class="slideTextHolder">
-                    <h1>Example</h1>
-                    <p>Example Text.</p>
+            <div class="slide" style="background: url('img/sliders/Moneyball.jpg') center; background-size: cover">
+                <div class="slideTextHolder" id="moneyballText">
+                    <h1 style="margin-bottom: 20px; font-size: 25px;">Moneyball</h1>
+                    <a href='https://www.youtube.com/watch?v=-4QPVo0UIzc' class='trailerButton' >Watch the trailer</a>
                     <!--
                         To add a link to the image
                     @if(!homePageContent.link.isEmpty) {
@@ -42,10 +41,10 @@
                     }-->
                 </div>
             </div>
-            <div class="slide" style="background: url('@homePageContent.background') center; background-size: cover">
-                <div class="slideTextHolder">
-                    <h1>Second Slide</h1>
-                    <p>Second slide text example</p>
+            <div class="slide" style="background: url('img/sliders/star-trek-slider.png') center; background-size: cover">
+                <div class="slideTextHolder" id="starTrekText">
+                    <h1 style="margin-bottom: 20px; font-size: 25px;">Star Trek: Into Darkness</h1>
+                    <a href='https://www.youtube.com/watch?v=r5gdbUC9mWU' class='trailerButton'>Watch the Trailer</a>
                     <!--
                         To add a link to the image
                     @if(!homePageContent.link.isEmpty) {
@@ -78,77 +77,78 @@
 
 
 
-
-
-
-
-
-
-<!--
-  <div id='container'></div>
-
-  <script id='template' type='text/ractive'>
-    <p>Hello, {{name}}!</p>
-  </script> 
-  
-
-  <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
-
-
-
-  <script>
-    var ractive = new Ractive({
-      // The `el` option can be a node, an ID, or a CSS selector.
-      el: '#container',
-
-      // We could pass in a string, but for the sake of convenience
-      // we're passing the ID of the <script> tag above.
-      template: '#template',
-
-      // Here, we're passing in some initial data
-      data: { name: 'David' }
-    });
-  </script>
--->
-
-
-
-
 <div class="letterBox" id="container">
-
-
     <script id='template' type='text/ractive'>
+        <table style="width: 100%;">
+        <tr>
         <h2>Great for a Date</h2>
         {{#each dateMovies}}
         <div>
             <div class="movieWrapper">
-                <img src="img/movieCovers/{{img}}" class="movieCover" alt={{name}}>
-
-                <!--
-                <div class="videoPlayer" style="display: none;">
-                	<iframe width="560" height="315" src="https://www.youtube.com/embed/aspBKFz2dBI" style="z-index: 100000;" frameborder="0" allowfullscreen></iframe>
-                </div> 
-                -->
+                <a href="{{video}}" target="_blank">
+                    <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                </a>
             </div>
         </div>
         {{/each}}
+        </tr>
+        
+        <tr>
+        <h2>Action</h2>
+        {{#each actionMovies}}
+        <div>
+            <div class="movieWrapper">
+                <a href="{{video}}" target="_blank">
+                    <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                </a>
+            </div>
+        </div>
+        {{/each}}
+        </tr>
 
-
+        <tr>
+        <h2>Sports</h2>
+        {{#each sportMovies}}
+        <div>
+            <div class="movieWrapper">
+                <a href="{{video}}" target="_blank">
+                    <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                </a>
+            </div>
+        </div>
+        {{/each}}
+        </tr>
+    </table>
     </script>
 
     <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
 
+
     <script>
-    	Ractive.DEBUG = false;
-        var ractive, dateMovies;
+        var ractive, dateMovies, actionMovies, sportMovies;
 
         dateMovies = [
-          { name: 'Date Night', 		img:'Date_Night.jpg', link: ''},
-          { name: 'The Intern', 		img:'The_Intern.jpg' },
-          { name: '500 Days of Summer', img:'500_Days_of_Summer.jpg' },
-          { name: "Valentine's Day" , 	img:'Valentines_Day.jpg' }
+            { name: 'Date Night',               link:'Date_Night.jpg',              video:'https://www.youtube.com/watch?v=aspBKFz2dBI' },
+            { name: 'The Intern',               link:'The_Intern.jpg',              video:'https://www.youtube.com/watch?v=W-DEy3mylCs' },
+            { name: '500 Days of Summer',       link:'500_Days_of_Summer.jpg',      video:'https://www.youtube.com/watch?v=PsD0NpFSADM' },
+            { name: "Valentine's Day" ,         link:'Valentines_Day.jpg',          video:'https://www.youtube.com/watch?v=1K45RdE2qlk' }
         ];
 
+        actionMovies = [
+            { name: 'Casino Royale',            link:'Casino_Royale.jpg',           video:'https://www.youtube.com/watch?v=xK7PbujRUOk' },
+            { name: 'Avengers:Age of Ultron',   link:'Avengers_Age_of_Ultron.png',  video:'https://www.youtube.com/watch?v=rD8lWtcgeyg' },
+            { name: 'The Bourne Identity',      link:'The_Bourne_Identity.jpg',     video:'https://www.youtube.com/watch?v=FpKaB5dvQ4g' },
+            { name: 'Star Trek: Into Darkness', link:'Star_Trek.jpg',               video:'https://www.youtube.com/watch?v=r5gdbUC9mWU' }
+
+        ]
+
+        sportMovies = [
+            { name: 'Remember the Titans',      link:'Remember_The_Titans.jpg',     video:'https://www.youtube.com/watch?v=nPhu9XsRl4M' },
+            { name: 'The Blind Side',           link:'The_Blind_Side.jpg',          video:'https://www.youtube.com/watch?v=gvqj_Tk_kuM' },
+            { name: 'MoneyBall',                link:'moneyball.jpg',               video:'https://www.youtube.com/watch?v=-4QPVo0UIzc' },
+            { name: 'Friday Night Lights' ,     link:'Friday_Night_Lights.jpg',     video:'https://www.youtube.com/watch?v=Qzyp4qOW0F0' }
+
+        ]
 
         ractive = new Ractive({
             // The `el` option can be a node, an ID, or a CSS selector.
@@ -160,10 +160,13 @@
 
             // Here, we're passing in some initial data
             data: { 
-                dateMovies: dateMovies
+                dateMovies: dateMovies,
+                actionMovies: actionMovies,
+                sportMovies: sportMovies
             }
         });
     </script>
+
 </div>
 
 <footer>
