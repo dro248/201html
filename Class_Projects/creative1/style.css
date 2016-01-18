@@ -47,7 +47,7 @@ h1, h3, h4, h5, p {
 
 #container {
 	z-index: -10;
-	height: 1300px;
+	//height: 1300px;  I commented this out to make the fantasy section fit in with it. 
 	padding: 2%;
 }
 

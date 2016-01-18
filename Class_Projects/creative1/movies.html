@@ -119,6 +119,19 @@
             </div>
             {{/each}}
             </tr>
+
+            <tr>
+            <h2>Fantasy</h2>
+            {{#each fantasyMovies}}
+            <div>
+                <div class="movieWrapper">
+                    <a href="{{video}}" target="_blank">
+                        <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+            </tr>
         </table>
         </script>
 
@@ -126,7 +139,7 @@
 
 
         <script>
-            var ractive, dateMovies, actionMovies, sportMovies;
+            var ractive, dateMovies, actionMovies, sportMovies, fantasyMovies;
 
             dateMovies = [
                 { name: 'Date Night',               link:'Date_Night.jpg',              video:'https://www.youtube.com/watch?v=aspBKFz2dBI' },
@@ -150,7 +163,12 @@
                 { name: 'Friday Night Lights' ,     link:'Friday_Night_Lights.jpg',     video:'https://www.youtube.com/watch?v=Qzyp4qOW0F0' }
 
             ]
-
+            fantasyMovies = [
+                { name: 'Harry Potter',             link:'Harry_Potter_Deathly_harrows_part2.jpg', video:'https://www.youtube.com/watch?v=5NYt1qirBWg'},
+                { name: 'The Hobbit ',              link:'The_Hobbit_Five_Armies.jpg',             video:'https://www.youtube.com/watch?v=iVAgTiBrrDA'},
+                { name: 'Chronicles of Narnia',     link:'Chronicles_of_Narnia.jpg' ,              video:'https://www.youtube.com/watch?v=LshOd31d-yE'},
+                { name: 'Lord of the Rings',        link:'The_Lord_Of_the_Rings_Fellowship_of_the_ring.jpg', video:'https://www.youtube.com/watch?v=V75dMMIW2B4'}
+            ]
             ractive = new Ractive({
                 // The `el` option can be a node, an ID, or a CSS selector.
                 el: '#container',
@@ -163,7 +181,9 @@
                 data: { 
                     dateMovies: dateMovies,
                     actionMovies: actionMovies,
-                    sportMovies: sportMovies
+                    sportMovies: sportMovies,
+                    fantasyMovies: fantasyMovies
+
                 }
             });
         </script>
