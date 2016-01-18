@@ -28,13 +28,13 @@
 }
 
 .slideTextHolder {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
     width: 500px;
     display: inline-block;
     margin-top: 200px;
     color: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #moneyballText {

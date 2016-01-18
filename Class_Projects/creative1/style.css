@@ -51,8 +51,18 @@ h1, h3, h4, h5, p {
 	padding: 2%;
 }
 
+
+.outline {
+	margin-left: 6%;
+	/*margin-right: 10%;*/
+	width: 1100px;
+	//padding: 2%;
+	background: #6b1414;
+	box-shadow: 0 0 3em #000;
+}
+
 .letterBox {
-	margin-left: 11%;
+	margin-left: 6%;
 	/*margin-right: 10%;*/
 	width: 920px;
 	padding: 2%;

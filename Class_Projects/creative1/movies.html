@@ -11,10 +11,11 @@
 </head>
 <body>
 
-<div class="letterBox">
-	<img src="img/testLogo.png" id="logo" />
+<div class="outline">
+    <div class="letterBox">
+    	<img src="img/testLogo.png" id="logo" />
+    </div>
 </div>
-
 
 <div class="spotlight">
     <div id="slider" class="swipe">
@@ -76,97 +77,98 @@
 
 
 
-
-<div class="letterBox" id="container">
-    <script id='template' type='text/ractive'>
-        <table style="width: 100%;">
-        <tr>
-        <h2>Great for a Date</h2>
-        {{#each dateMovies}}
-        <div>
-            <div class="movieWrapper">
-                <a href="{{video}}" target="_blank">
-                    <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
-                </a>
+<div class="outline">
+    <div class="letterBox" id="container">
+        <script id='template' type='text/ractive'>
+            <table style="width: 100%;">
+            <tr>
+            <h2>Great for a Date</h2>
+            {{#each dateMovies}}
+            <div>
+                <div class="movieWrapper">
+                    <a href="{{video}}" target="_blank">
+                        <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                    </a>
+                </div>
             </div>
-        </div>
-        {{/each}}
-        </tr>
-        
-        <tr>
-        <h2>Action</h2>
-        {{#each actionMovies}}
-        <div>
-            <div class="movieWrapper">
-                <a href="{{video}}" target="_blank">
-                    <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
-                </a>
+            {{/each}}
+            </tr>
+            
+            <tr>
+            <h2>Action</h2>
+            {{#each actionMovies}}
+            <div>
+                <div class="movieWrapper">
+                    <a href="{{video}}" target="_blank">
+                        <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                    </a>
+                </div>
             </div>
-        </div>
-        {{/each}}
-        </tr>
+            {{/each}}
+            </tr>
 
-        <tr>
-        <h2>Sports</h2>
-        {{#each sportMovies}}
-        <div>
-            <div class="movieWrapper">
-                <a href="{{video}}" target="_blank">
-                    <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
-                </a>
+            <tr>
+            <h2>Sports</h2>
+            {{#each sportMovies}}
+            <div>
+                <div class="movieWrapper">
+                    <a href="{{video}}" target="_blank">
+                        <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                    </a>
+                </div>
             </div>
-        </div>
-        {{/each}}
-        </tr>
-    </table>
-    </script>
+            {{/each}}
+            </tr>
+        </table>
+        </script>
 
-    <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+        <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
 
 
-    <script>
-        var ractive, dateMovies, actionMovies, sportMovies;
+        <script>
+            var ractive, dateMovies, actionMovies, sportMovies;
 
-        dateMovies = [
-            { name: 'Date Night',               link:'Date_Night.jpg',              video:'https://www.youtube.com/watch?v=aspBKFz2dBI' },
-            { name: 'The Intern',               link:'The_Intern.jpg',              video:'https://www.youtube.com/watch?v=W-DEy3mylCs' },
-            { name: '500 Days of Summer',       link:'500_Days_of_Summer.jpg',      video:'https://www.youtube.com/watch?v=PsD0NpFSADM' },
-            { name: "Valentine's Day" ,         link:'Valentines_Day.jpg',          video:'https://www.youtube.com/watch?v=1K45RdE2qlk' }
-        ];
+            dateMovies = [
+                { name: 'Date Night',               link:'Date_Night.jpg',              video:'https://www.youtube.com/watch?v=aspBKFz2dBI' },
+                { name: 'The Intern',               link:'The_Intern.jpg',              video:'https://www.youtube.com/watch?v=W-DEy3mylCs' },
+                { name: '500 Days of Summer',       link:'500_Days_of_Summer.jpg',      video:'https://www.youtube.com/watch?v=PsD0NpFSADM' },
+                { name: "Valentine's Day" ,         link:'Valentines_Day.jpg',          video:'https://www.youtube.com/watch?v=1K45RdE2qlk' }
+            ];
 
-        actionMovies = [
-            { name: 'Casino Royale',            link:'Casino_Royale.jpg',           video:'https://www.youtube.com/watch?v=xK7PbujRUOk' },
-            { name: 'Avengers:Age of Ultron',   link:'Avengers_Age_of_Ultron.png',  video:'https://www.youtube.com/watch?v=rD8lWtcgeyg' },
-            { name: 'The Bourne Identity',      link:'The_Bourne_Identity.jpg',     video:'https://www.youtube.com/watch?v=FpKaB5dvQ4g' },
-            { name: 'Star Trek: Into Darkness', link:'Star_Trek.jpg',               video:'https://www.youtube.com/watch?v=r5gdbUC9mWU' }
+            actionMovies = [
+                { name: 'Casino Royale',            link:'Casino_Royale.jpg',           video:'https://www.youtube.com/watch?v=xK7PbujRUOk' },
+                { name: 'Avengers:Age of Ultron',   link:'Avengers_Age_of_Ultron.png',  video:'https://www.youtube.com/watch?v=rD8lWtcgeyg' },
+                { name: 'The Bourne Identity',      link:'The_Bourne_Identity.jpg',     video:'https://www.youtube.com/watch?v=FpKaB5dvQ4g' },
+                { name: 'Star Trek: Into Darkness', link:'Star_Trek.jpg',               video:'https://www.youtube.com/watch?v=r5gdbUC9mWU' }
 
-        ]
+            ]
 
-        sportMovies = [
-            { name: 'Remember the Titans',      link:'Remember_The_Titans.jpg',     video:'https://www.youtube.com/watch?v=nPhu9XsRl4M' },
-            { name: 'The Blind Side',           link:'The_Blind_Side.jpg',          video:'https://www.youtube.com/watch?v=gvqj_Tk_kuM' },
-            { name: 'MoneyBall',                link:'moneyball.jpg',               video:'https://www.youtube.com/watch?v=-4QPVo0UIzc' },
-            { name: 'Friday Night Lights' ,     link:'Friday_Night_Lights.jpg',     video:'https://www.youtube.com/watch?v=Qzyp4qOW0F0' }
+            sportMovies = [
+                { name: 'Remember the Titans',      link:'Remember_The_Titans.jpg',     video:'https://www.youtube.com/watch?v=nPhu9XsRl4M' },
+                { name: 'The Blind Side',           link:'The_Blind_Side.jpg',          video:'https://www.youtube.com/watch?v=gvqj_Tk_kuM' },
+                { name: 'MoneyBall',                link:'moneyball.jpg',               video:'https://www.youtube.com/watch?v=-4QPVo0UIzc' },
+                { name: 'Friday Night Lights' ,     link:'Friday_Night_Lights.jpg',     video:'https://www.youtube.com/watch?v=Qzyp4qOW0F0' }
 
-        ]
+            ]
 
-        ractive = new Ractive({
-            // The `el` option can be a node, an ID, or a CSS selector.
-            el: '#container',
+            ractive = new Ractive({
+                // The `el` option can be a node, an ID, or a CSS selector.
+                el: '#container',
 
-            // We could pass in a string, but for the sake of convenience
-            // we're passing the ID of the <script> tag above.
-            template: '#template',
+                // We could pass in a string, but for the sake of convenience
+                // we're passing the ID of the <script> tag above.
+                template: '#template',
 
-            // Here, we're passing in some initial data
-            data: { 
-                dateMovies: dateMovies,
-                actionMovies: actionMovies,
-                sportMovies: sportMovies
-            }
-        });
-    </script>
+                // Here, we're passing in some initial data
+                data: { 
+                    dateMovies: dateMovies,
+                    actionMovies: actionMovies,
+                    sportMovies: sportMovies
+                }
+            });
+        </script>
 
+    </div>
 </div>
 
 <footer>
