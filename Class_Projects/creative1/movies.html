@@ -132,6 +132,20 @@
             </div>
             {{/each}}
             </tr>
+
+
+            <tr>
+            <h2>Sci-Fi</h2>
+            {{#each scifiMovies }}
+            <div>
+                <div class="movieWrapper">
+                    <a href="{{video}}" target="_blank">
+                        <img src="img/movieCovers/{{link}}" class="movieCover" alt={{name}} style="margin-bottom:2px !important;">
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+            </tr>
         </table>
         </script>
 
@@ -139,7 +153,7 @@
 
 
         <script>
-            var ractive, dateMovies, actionMovies, sportMovies, fantasyMovies;
+            var ractive, dateMovies, actionMovies, sportMovies, fantasyMovies,scifiMovies;
 
             dateMovies = [
                 { name: 'Date Night',               link:'Date_Night.jpg',              video:'https://www.youtube.com/watch?v=aspBKFz2dBI' },
@@ -152,7 +166,7 @@
                 { name: 'Casino Royale',            link:'Casino_Royale.jpg',           video:'https://www.youtube.com/watch?v=xK7PbujRUOk' },
                 { name: 'Avengers:Age of Ultron',   link:'Avengers_Age_of_Ultron.png',  video:'https://www.youtube.com/watch?v=rD8lWtcgeyg' },
                 { name: 'The Bourne Identity',      link:'The_Bourne_Identity.jpg',     video:'https://www.youtube.com/watch?v=FpKaB5dvQ4g' },
-                { name: 'Star Trek: Into Darkness', link:'Star_Trek.jpg',               video:'https://www.youtube.com/watch?v=r5gdbUC9mWU' }
+                { name: 'The Dark Knight Rises',    link:'Bat_Man.jpg',                 video:'https://www.youtube.com/watch?v=GokKUqLcvD8' }
 
             ]
 
@@ -164,10 +178,16 @@
 
             ]
             fantasyMovies = [
-                { name: 'Harry Potter',             link:'Harry_Potter_Deathly_harrows_part2.jpg', video:'https://www.youtube.com/watch?v=5NYt1qirBWg'},
-                { name: 'The Hobbit ',              link:'The_Hobbit_Five_Armies.jpg',             video:'https://www.youtube.com/watch?v=iVAgTiBrrDA'},
-                { name: 'Chronicles of Narnia',     link:'Chronicles_of_Narnia.jpg' ,              video:'https://www.youtube.com/watch?v=LshOd31d-yE'},
-                { name: 'Lord of the Rings',        link:'The_Lord_Of_the_Rings_Fellowship_of_the_ring.jpg', video:'https://www.youtube.com/watch?v=V75dMMIW2B4'}
+                { name: 'Harry Potter the Deathly Harrows Part 2', link:'Harry_Potter_Deathly_harrows_part2.jpg', video:'https://www.youtube.com/watch?v=5NYt1qirBWg'},
+                { name: 'The Hobbit Battle of Five Armies',        link:'The_Hobbit_Five_Armies.jpg',             video:'https://www.youtube.com/watch?v=iVAgTiBrrDA'},
+                { name: 'Chronicles of Narnia',                    link:'Chronicles_of_Narnia.jpg' ,              video:'https://www.youtube.com/watch?v=LshOd31d-yE'},
+                { name: 'Lord of the Rings The Fellowship of the Ring', link:'The_Lord_Of_the_Rings_Fellowship_of_the_ring.jpg', video:'https://www.youtube.com/watch?v=V75dMMIW2B4'}
+            ]
+            scifiMovies = [
+                { name: 'Star Trek: Into Darkness',     link:'Star_Trek.jpg',              video:'https://www.youtube.com/watch?v=r5gdbUC9mWU'},
+                { name: 'The Martian',                  link:'The_Martian.jpg',            video:'https://www.youtube.com/watch?v=ej3ioOneTy8'},
+                { name: 'Interstella',                  link:'Interstellar.jpg' ,          video:'https://www.youtube.com/watch?v=0vxOhd4qlnA'},
+                { name: 'Star Wars the Force Awakens',  link:'Star_wars.jpg',              video:'https://www.youtube.com/watch?v=sGbxmsDFVnE'}
             ]
             ractive = new Ractive({
                 // The `el` option can be a node, an ID, or a CSS selector.
@@ -182,8 +202,8 @@
                     dateMovies: dateMovies,
                     actionMovies: actionMovies,
                     sportMovies: sportMovies,
-                    fantasyMovies: fantasyMovies
-
+                    fantasyMovies: fantasyMovies,
+                    scifiMovies: scifiMovies
                 }
             });
         </script>
