@@ -95,7 +95,7 @@ footer p {
 	border: 5px solid #fff;
 	border-radius: 3px;
 	box-shadow: 0 0px .5em #000;
-	transition: box-shadow .25s, margin-top .25s;
+	transition: box-shadow .25s, margin-top .25s, opacity .25s;
 }
 
 .movieCover:hover {
@@ -103,4 +103,5 @@ footer p {
 /*	height: 305px;
 	width: 202px;*/
 	margin-top: -5px;
+	opacity: 0.65;
 }
