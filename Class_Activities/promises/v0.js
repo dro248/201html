@@ -43,8 +43,11 @@ function get(url) {
   });
 }
 
-get('story.json').then(function(response) {
-  console.log("Success!", response);
-}, function(error) {
-  console.error("Failed!", error);
+function getJSON(url){
+	return get(url).then(JSON.parse);
+}
+getJSON('story.json').then(function(story) {
+  return getJSON(story.chapterUrls[0]);
+}).then(function(chapter1) {
+  console.log("Got chapter 1!", chapter1);
 });
