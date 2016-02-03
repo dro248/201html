@@ -1,0 +1,16 @@
+
+body{
+	background-image: url("https://www.lds.org/bc/content/ldsorg/topics/family-history/familyhistoryforeveryone/AV130117_kat0589%20(1).jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+#appContainer {
+	display: inline-block;
+	margin-left: 350px !important;
+	margin-top: 380px !important;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 30px 50px;
+	border-radius: 25px;
+}
