@@ -1,4 +1,9 @@
 
+.sidebar, .mainBody {
+	display: flex;
+	flex-direction: column;
+}
+
 .sidebar {
 	display: flex;
 	flex-direction: column;
@@ -6,27 +11,11 @@
 	position: fixed;
 	right: 0;
 	top: 0;
-
-	/*margin: 0; 
-    position: absolute;
-	top: 0px;
-	right: 0px;
-	text-decoration: none;
-	list-style: none;*/
+	border-left: 20px solid black;
 }
 
 .item {
-	height: 140px;
+	height: 160px;
 	background: lightgray;
 	border: 1px dotted black;
 }
-
-
-
-
-/*.sidebar ul li { 
-    background: pink;
-    border: 1px solid black;
-    width: calc(10%);
-    height
-}*/
