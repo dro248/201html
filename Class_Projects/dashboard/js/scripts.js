@@ -24,13 +24,6 @@ $(function() {
 		});
 	}
 
-	/**
-	 * Weather is a string like : "Partly Cloudy"
-	 */
-	function getImage(weather) {
-
-	}
-
 	function nyTimes() {
 		var sections = [ "home", "world", "national", "politics", "nyregion", "business", "opinion", "technology", 
 			"science", "health", "sports", "arts", "fashion", "dining", "travel", "magazine", "realestate" ],
