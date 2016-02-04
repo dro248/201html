@@ -17,7 +17,7 @@ $(function() {
 			var weatherElements = ["sunny", "partly cloudy", "snowing", "raining"]
 			var elem = document.getElementById("weatherImage");
 
-			current_weather = (weatherElements.indexOf(current_weather.toLowerCase()) === -1) ? "sunny" : current_weather;
+			current_weather = (weatherElements.indexOf(current_weather.toLowerCase()) === -1) ? "snowing" : current_weather;
 
 			elem.setAttribute("src", "img/" + current_weather.toLowerCase() +".png");
 			elem.setAttribute("alt", "img/" + current_weather.toLowerCase() +".png");
