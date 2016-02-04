@@ -66,7 +66,7 @@ $(function() {
 
 		// Put the corresponding info from the 'art' object into their elements
 		title.innerHTML = art.title;
-		abstract.innerHTML = art.abstract;
+		abstract.innerHTML = shorten(art.abstract);
 		url.href = art.url;
 		url.innerHTML = art.title;
 
@@ -76,6 +76,14 @@ $(function() {
 		article.appendChild(abstract);
 		// add the article to the list
 		document.getElementById("articles").appendChild(article);
+	}
+
+	function shorten(val) {
+		if (val.length < 40) {
+			return val;
+		} else {
+			return val.substring(0, 35)+"...";
+		}
 	}
 
 	function updateTime() {
