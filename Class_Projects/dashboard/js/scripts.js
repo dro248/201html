@@ -14,6 +14,18 @@ $(function() {
 			var current_weather = parsed_json['current_observation']['weather'];
 			var weather;
 			$("#greeting").html(greeting);
+			var weatherElements = ["sunny", "partly cloudy", "snowing", "raining"]
+			var elem = document.createElement("img");
+
+			current_weather = weatherElements.indexOf(current_weather) == -1 ? "sunny": current_weather;
+
+			elem.setAttribute("src", "img/" + current_weather.toLowerCase() +".png");
+			//console.log("img/" + current_weather.toLowerCase() +".png");
+			//elem.setAttribute("height", "768");
+			//elem.setAttribute("width", "1024");
+			elem.setAttribute("alt", "img/rainy.png");
+			//console.log(elem);
+			document.getElementById("weatherImage").appendChild(elem);
 		});
 	}
 
