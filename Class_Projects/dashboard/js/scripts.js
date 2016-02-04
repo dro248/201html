@@ -54,17 +54,20 @@ $(function() {
 
 		// Put the corresponding info from the 'art' object into their elements
 		title.innerHTML = art.title;
+		title.style.fontWeight = "800";
+		title.style.color = "gray";
+		title.style.fontFamily = "Times";
+		title.style.fontSize = "x-large";
 		abstract.innerHTML = shorten(art.abstract);
 		abstract.title = art.abstract;
 		url.href = art.url;
-		url.innerHTML = art.title;
 
 		// add the title as a link, <br>, then the abstract explanation of the article.
-		article.appendChild(url);
-		article.appendChild(lineBreak);
+		article.appendChild(title);
 		article.appendChild(abstract);
+		url.appendChild(article);
 		// add the article to the list
-		document.getElementById("articles").appendChild(article);
+		document.getElementById("articles").appendChild(url);
 	}
 
 	function shorten(val) {
