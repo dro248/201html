@@ -15,17 +15,17 @@ $(function() {
 			var weather;
 			$("#greeting").html(greeting);
 			var weatherElements = ["sunny", "partly cloudy", "snowing", "raining"]
-			// var elem = document.createElement("img");
+			var elem = document.createElement("img");
 
-			current_weather = weatherElements.indexOf(current_weather.toLowerCase()) == -1 ? "sunny": current_weather;
+			current_weather = weatherElements.indexOf(current_weather) == -1 ? "sunny": current_weather;
 
-			// elem.setAttribute("src", "img/" + current_weather.toLowerCase() +".png");
+			elem.setAttribute("src", "img/" + current_weather.toLowerCase() +".png");
 			//console.log("img/" + current_weather.toLowerCase() +".png");
 			//elem.setAttribute("height", "768");
 			//elem.setAttribute("width", "1024");
-			// elem.setAttribute("alt", "img/rainy.png");
+			elem.setAttribute("alt", "img/rainy.png");
 			//console.log(elem);
-			document.getElementById("weatherImage").src = "img/"+current_weather.toLowerCase()+".png";
+			document.getElementById("weatherImage").appendChild(elem);
 		});
 	}
 
@@ -43,8 +43,34 @@ $(function() {
 		newswireKey = "a8cf6af2d1820b864378acd5c9b9ca1b:8:74283828",
 		url = "http://api.nytimes.com/svc/topstories/v1/"+sections[2]+".json?api-key="+topStoriesKey;
 		$.getJSON(url, function(data) {
-			console.log(data);
+			data.results.forEach(makeArticleLink);
 		});
+	}
+
+	/**
+	 * art is an article object from the nytimes json
+	 * creates elements that will be added to the thing
+	 */
+	function makeArticleLink(art) {
+		// create elements for the article
+		var article = document.createElement("div"),
+		title = document.createElement("span"),
+		abstract = document.createElement("div"),
+		lineBreak = document.createElement("br"),
+		url = document.createElement("a");
+
+		// Put the corresponding info from the 'art' object into their elements
+		title.innerHTML = art.title;
+		abstract.innerHTML = art.abstract;
+		url.href = art.url;
+		url.innerHTML = art.title;
+
+		// add the title as a link, <br>, then the abstract explanation of the article.
+		article.appendChild(url);
+		article.appendChild(lineBreak);
+		article.appendChild(abstract);
+		// add the article to the list
+		document.getElementById("articles").appendChild(article);
 	}
 
 	function updateTime() {
