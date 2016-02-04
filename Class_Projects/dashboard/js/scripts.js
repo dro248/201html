@@ -24,12 +24,27 @@ $(function() {
 		});
 	}
 
-	function nyTimes() {
-		var sections = [ "home", "world", "national", "politics", "nyregion", "business", "opinion", "technology", 
+	function nyTimes(section, createList) {
+		var sections = [ "home", "world", "national", "politics", "nyregion", "business", "opinion", "technology",
 			"science", "health", "sports", "arts", "fashion", "dining", "travel", "magazine", "realestate" ],
+		section = section || "national",
 		topStoriesKey = "bf1c3b8bf43dcf7910aae43bf75d25f1:8:74283828",
 		newswireKey = "a8cf6af2d1820b864378acd5c9b9ca1b:8:74283828",
-		url = "http://api.nytimes.com/svc/topstories/v1/"+sections[2]+".json?api-key="+topStoriesKey;
+		url = "http://api.nytimes.com/svc/topstories/v1/"+sections[sections.indexOf(section)]+".json?api-key="+topStoriesKey;
+
+		if (createList) {
+			// make select element for changing topics
+			var select = document.createElement("select");
+			sections.forEach(function(sec){
+				var topic = document.createElement("option");
+				topic.innerHTML = sec;
+				topic.value = sec;
+				select.appendChild(topic);
+			});
+			select.addEventListener('change', reload);
+			document.getElementById("reloadList").appendChild(select);
+		}
+
 		$.getJSON(url, function(data) {
 			data.results.forEach(makeArticleLink);
 		});
@@ -54,11 +69,12 @@ $(function() {
 
 		// Put the corresponding info from the 'art' object into their elements
 		title.innerHTML = art.title;
+		// style the title a bit
 		title.style.fontWeight = "800";
 		title.style.color = "gray";
 		title.style.fontFamily = "Times";
 		title.style.fontSize = "x-large";
-		abstract.innerHTML = shorten(art.abstract);
+		abstract.innerHTML = art.abstract;
 		abstract.title = art.abstract;
 		url.href = art.url;
 
@@ -68,14 +84,6 @@ $(function() {
 		url.appendChild(article);
 		// add the article to the list
 		document.getElementById("articles").appendChild(url);
-	}
-
-	function shorten(val) {
-		// if (val.length < 40) {
-			return val;
-		// } else {
-		// 	return val.substring(0, 35)+"...";
-		// }
 	}
 
 	function updateTime() {
@@ -89,8 +97,33 @@ $(function() {
 		$("#datetime").html(datetime);
 	}
 
-	nyTimes();
+	/**
+	 * Reloads the articles with a new topic
+	 * triggered by selecting a new value
+	 */
+	function reload(e) {
+		document.getElementById("articles").innerHTML = "";
+		nyTimes(this.value);
+	}
+
+	// show / hide the select list when you press 'z'
+	document.onkeydown = function(e){
+        if (e.keyCode == 90) {
+        	var sel = document.getElementById("reloadList");
+        	console.log("hi");
+        	if (sel.style.display == "none") {
+        		sel.style.display = "block";
+        	} else {
+        		sel.style.display = "none";
+        	}
+        }
+    }
+
+    // initially populate the articles div
+	nyTimes(undefined, true);
+	// initially populate the greeting and weather information
 	weather();
+	// update the time every second
 	setInterval(updateTime, 1000);
 
 });
