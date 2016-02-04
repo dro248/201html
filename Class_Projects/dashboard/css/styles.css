@@ -1,13 +1,18 @@
-#container {
-	margin-left: 10%;
-	margin-right: 10%;
-}
-
 #header {
-	background: lightblue;
+	background: -webkit-linear-gradient(#4d93ff, #0064ff, #005ae6, #0064ff, #80b2ff); /* For Safari 5.1 to 6.0 */
 	height: 150px;
 	width: 100%;
 	position: absolute;
 	top: 0;
-	padding: 15px 15%;
+	padding: 15px 20%;
+	color: white;
+	box-shadow: 0 1px 5px #0064ff;
+}
+
+#weatherImage {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 20px;
+	left: 600px;
 }
