@@ -13,7 +13,7 @@ $(function() {
 			var temp_string = parsed_json['current_observation']['temperature_string'];
 			var current_weather = parsed_json['current_observation']['weather'];
 			var weather = greeting;
-			$("#header").html(weather);
+			$("#greeting").html(weather);
 		});
 	}
 
@@ -28,6 +28,19 @@ $(function() {
 		});
 	}
 
-	nyTimes()
+	function updateTime() {
+		var currentdate = new Date();
+		var datetime = currentdate.getDate() + "/"
+			+ (currentdate.getMonth()+1)  + "/"
+			+ currentdate.getFullYear() + " @ "
+			+ currentdate.getHours() + ":"
+			+ currentdate.getMinutes() + ":"
+			+ currentdate.getSeconds();
+		$("#datetime").html(datetime);
+	}
+
+	nyTimes();
+	weather();
+	setInterval(updateTime, 1000);
 
 });
