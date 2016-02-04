@@ -12,9 +12,16 @@ $(function() {
 		$.getJSON(wundergroundUrl, function(parsed_json) {
 			var temp_string = parsed_json['current_observation']['temperature_string'];
 			var current_weather = parsed_json['current_observation']['weather'];
-			var weather = greeting;
-			$("#greeting").html(weather);
+			var weather;
+			$("#greeting").html(greeting);
 		});
+	}
+
+	/**
+	 * Weather is a string like : "Partly Cloudy"
+	 */
+	function getImage(weather) {
+
 	}
 
 	function nyTimes() {
