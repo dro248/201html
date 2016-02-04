@@ -12,20 +12,15 @@ $(function() {
 		$.getJSON(wundergroundUrl, function(parsed_json) {
 			var temp_string = parsed_json['current_observation']['temperature_string'];
 			var current_weather = parsed_json['current_observation']['weather'];
-			var weather;
+			$("#temp").html(temp_string);
 			$("#greeting").html(greeting);
 			var weatherElements = ["sunny", "partly cloudy", "snowing", "raining"]
-			var elem = document.createElement("img");
+			var elem = document.getElementById("weatherImage");
 
-			current_weather = weatherElements.indexOf(current_weather) == -1 ? "sunny": current_weather;
+			current_weather = (weatherElements.indexOf(current_weather.toLowerCase()) === -1) ? "sunny" : current_weather;
 
 			elem.setAttribute("src", "img/" + current_weather.toLowerCase() +".png");
-			//console.log("img/" + current_weather.toLowerCase() +".png");
-			//elem.setAttribute("height", "768");
-			//elem.setAttribute("width", "1024");
-			elem.setAttribute("alt", "img/rainy.png");
-			//console.log(elem);
-			document.getElementById("weatherImage").appendChild(elem);
+			elem.setAttribute("alt", "img/" + current_weather.toLowerCase() +".png");
 		});
 	}
 
