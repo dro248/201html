@@ -19,12 +19,18 @@
 
 #articles {
 	margin-top: 160px;
-	margin-left: 25%;
-	margin-bottom: 50px !important;
+	margin-left: 300px;
+	margin-right: 300px;
 	display: inline-block;
 }
 
 .article {
-	border: 1px solid black;
-	border-radius: 5px;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	margin: 15px;
+	background: white;
+}
+
+body {
+	/*background: lightgray;*/
 }

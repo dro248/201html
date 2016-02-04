@@ -80,11 +80,11 @@ $(function() {
 	}
 
 	function shorten(val) {
-		if (val.length < 40) {
+		// if (val.length < 40) {
 			return val;
-		} else {
-			return val.substring(0, 35)+"...";
-		}
+		// } else {
+		// 	return val.substring(0, 35)+"...";
+		// }
 	}
 
 	function updateTime() {
