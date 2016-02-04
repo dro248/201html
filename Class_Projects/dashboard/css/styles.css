@@ -2,11 +2,11 @@
 	background: -webkit-linear-gradient(#4d93ff, #0064ff, #005ae6, #0064ff, #80b2ff); /* For Safari 5.1 to 6.0 */
 	height: 150px;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	padding: 15px 20%;
 	color: white;
-	box-shadow: 0 1px 5px #0064ff;
+	box-shadow: 0 1px 10px #0064ff;
 }
 
 #weatherImage {
@@ -15,4 +15,16 @@
 	position: absolute;
 	top: 20px;
 	left: 600px;
+}
+
+#articles {
+	margin-top: 160px;
+	margin-left: 25%;
+	margin-bottom: 50px !important;
+	display: inline-block;
+}
+
+.article {
+	border: 1px solid black;
+	border-radius: 5px;
 }

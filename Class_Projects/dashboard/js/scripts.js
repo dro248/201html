@@ -60,7 +60,7 @@ $(function() {
 		url = document.createElement("a");
 
 		//add css to the classes
-		article.className = "article";
+		article.className = "article panel-body";
 		url.className = "title";
 		abstract.className = "abstract";
 
