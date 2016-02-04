@@ -1,4 +1,8 @@
 #header {
 	background: lightblue;
-	
+	height: 150px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	padding: 15px;
 }
