@@ -59,6 +59,11 @@ $(function() {
 		lineBreak = document.createElement("br"),
 		url = document.createElement("a");
 
+		//add css to the classes
+		article.className = "article";
+		url.className = "title";
+		abstract.className = "abstract";
+
 		// Put the corresponding info from the 'art' object into their elements
 		title.innerHTML = art.title;
 		abstract.innerHTML = art.abstract;
