@@ -67,6 +67,7 @@ $(function() {
 		// Put the corresponding info from the 'art' object into their elements
 		title.innerHTML = art.title;
 		abstract.innerHTML = shorten(art.abstract);
+		abstract.title = art.abstract;
 		url.href = art.url;
 		url.innerHTML = art.title;
 
