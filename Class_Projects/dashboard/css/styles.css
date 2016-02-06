@@ -1,32 +1,61 @@
-
-.sidebar {
-	display: flex;
-	flex-direction: column;
-	width: 25%;
+#header {
+	background: -webkit-linear-gradient(#4d93ff, #0064ff, #005ae6, #0064ff, #80b2ff); /* For Safari 5.1 to 6.0 */
+	height: 150px;
+	width: 100%;
 	position: fixed;
-	right: 0;
 	top: 0;
-
-	/*margin: 0; 
-    position: absolute;
-	top: 0px;
-	right: 0px;
-	text-decoration: none;
-	list-style: none;*/
+	padding: 15px 20%;
+	color: white;
+	box-shadow: 0 1px 10px #0064ff;
+	z-index: 100;
 }
 
-.item {
-	height: 140px;
-	background: lightgray;
-	border: 1px dotted black;
+#weatherImage {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 20px;
+	left: 600px;
 }
 
+#articles {
+	margin-top: 360px;
+	margin-left: 300px;
+	margin-right: 300px;
+	display: inline-block;
+}
 
+.article {
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	margin: 15px;
+	background: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	transition: box-shadow .25s;
+}
 
+.article:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-/*.sidebar ul li { 
-    background: pink;
-    border: 1px solid black;
-    width: calc(10%);
-    height
-}*/
+#logo {
+	position: absolute !important;
+	top: 160px;
+	left: 375px;
+}
+
+#reloadList {
+	position: fixed;
+	top: 160px;
+	left: 100px;
+	display: none;
+}
+
+a {
+	text-decoration: none !important;
+	color: black;
+}
+
+a:hover {
+	color: black;
+}
