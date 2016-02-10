@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- include our dependency on angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="script.js"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="normalize.css" />
+  <title>User Avatar Template</title>
+</head>
+<body>
+  <div ng-app='app' ng-controller='mainCtrl'>
+
+    <div id="formContainer">
+      <h1>Create new user</h1>
+      <form name='userForm' ng-submit='addNew(userForm)'>
+        <input placeholder='Name' ng-model='userForm.name'/>
+        <input placeholder='Image Url' ng-model='userForm.url'/>
+        <button type='submit'>Add New</button>
+      </form>
+    </div>
+
+    <!-- Custom Angular Directive -->
+    <div id="userContainer">
+      <ul class='User-list'>
+        <li ng-repeat='user in users'>
+          <avatar user='user' />
+        </li>
+      </ul>
+      <h4>{{user.name}}</h4>
+    </div>
+  </div>
+</body>
+</html>
