@@ -1,0 +1,23 @@
+body { 
+	background: DarkBlue; 
+}
+
+#productArea { 
+	background: white;
+	margin: 100px 0;
+}
+
+.myBoxes {
+	margin: 25px;
+}
+
+#logo {
+	color: white;
+	font-size: 40px;
+	font-family: cursive;
+	text-decoration: underline;
+}
+
+#logoContainer {
+	display: inline;
+}

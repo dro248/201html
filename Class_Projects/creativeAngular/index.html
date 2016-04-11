@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="storeFront">
+  <head>
+    <title>BYU Honor Cone</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="container" ng-controller="StoreController as store">
+  	<div id="logoContainer" align="center"><h1 id="logo">BYU Honor Cone</h1></div>
+  	<div id="productArea">
+	    <div class="product row" ng-repeat="flavor in store.flavors">
+			<div class="col-md-3 myBoxes" align="center">
+				<div class="well">
+					<h3>{{flavor.name}}</h3>
+					<img ng-src="{{flavor.thumbnail}}" height='200px'/>
+					<p><strong>{{flavor.price | currency}}</strong></p>
+					<button ng-show="store.product.canPurchase" ng-hide="store.product.soldOut">Add to Cart</button>
+				</div>
+			</div>
+	    </div>
+    </div>
+
+
+
+
+<!-- 
+<div class="row">
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="well">
+          <h4 class="text-danger"><span class="label label-danger pull-right">- 9%</span> New Users </h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="well">
+          <h4 class="text-success"><span class="label label-success pull-right">+ 3%</span> Returning </h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="well">
+          <h4 class="text-primary"><span class="label label-primary pull-right">201</span> Sales </h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="well">
+          <h4 class="text-success"><span class="label label-success pull-right">+ 24%</span> Pageviews </h4>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>
+-->
+  </body>
+</html>
